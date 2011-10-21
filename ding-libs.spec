@@ -36,7 +36,7 @@ Group:		Development/Libraries
 
 %description -n libcollection
 A data-type to collect data in a hierarchical structure for easy
-iteration and serialization
+iteration and serialization.
 
 %package -n libcollection-devel
 Summary:	Development files for libcollection
@@ -47,7 +47,7 @@ Requires:	libcollection = %{collection_version}-%{release}
 
 %description -n libcollection-devel
 A data-type to collect data in a hierarchical structure for easy
-iteration and serialization
+iteration and serialization.
 
 %package -n libdhash
 Summary:	Dynamic hash table
@@ -57,7 +57,7 @@ Group:		Development/Libraries
 
 %description -n libdhash
 A hash table which will dynamically resize to achieve optimal storage
-& access time properties
+& access time properties.
 
 %package -n libdhash-devel
 Summary:	Development files for libdhash
@@ -68,7 +68,7 @@ Requires:	libdhash = %{dhash_version}-%{release}
 
 %description -n libdhash-devel
 A hash table which will dynamically resize to achieve optimal storage
-& access time properties
+& access time properties.
 
 %package -n libini_config
 Summary:	INI file parser for C
@@ -78,7 +78,7 @@ Group:		Development/Libraries
 
 %description -n libini_config
 Library to process config files in INI format into a libcollection
-data structure
+data structure.
 
 %package -n libini_config-devel
 Summary:	Development files for libini_config
@@ -89,7 +89,7 @@ Requires:	libini_config = %{ini_config_version}-%{release}
 
 %description -n libini_config-devel
 Library to process config files in INI format into a libcollection
-data structure
+data structure.
 
 %package -n libpath_utils
 Summary:	Filesystem Path Utilities
@@ -98,7 +98,7 @@ License:	LGPL v3+
 Group:		Development/Libraries
 
 %description -n libpath_utils
-Utility functions to manipulate filesystem pathnames
+Utility functions to manipulate filesystem pathnames.
 
 %package -n libpath_utils-devel
 Summary:	Development files for libpath_utils
@@ -108,7 +108,7 @@ Group:		Development/Libraries
 Requires:	libpath_utils = %{path_utils_version}-%{release}
 
 %description -n libpath_utils-devel
-Utility functions to manipulate filesystem pathnames
+Utility functions to manipulate filesystem pathnames.
 
 %package -n libref_array
 Summary:	A refcounted array for C
@@ -117,7 +117,7 @@ License:	LGPL v3+
 Group:		Development/Libraries
 
 %description -n libref_array
-A dynamically-growing, reference-counted array
+A dynamically-growing, reference-counted array.
 
 %package -n libref_array-devel
 Summary:	Development files for libref_array
@@ -127,7 +127,7 @@ Group:		Development/Libraries
 Requires:	libref_array = %{ref_array_version}-%{release}
 
 %description -n libref_array-devel
-A dynamically-growing, reference-counted array
+A dynamically-growing, reference-counted array.
 
 %prep
 %setup -q
