@@ -2,22 +2,22 @@
 # Conditional build:
 %bcond_without	tests		# build without tests
 
-%define		basicobjects_version	0.1.0
+%define		basicobjects_version	0.1.1
 %define		collection_version	0.6.2
 %define		dhash_version		0.4.3
-%define		ini_config_version	1.0.0.1
+%define		ini_config_version	1.1.0
 %define		path_utils_version	0.2.1
-%define		ref_array_version	0.1.3
+%define		ref_array_version	0.1.4
 Summary:	"Ding is not GLib" assorted utility libraries
 Summary(pl.UTF-8):	"Ding is not GLib" - niepowiązane ze sobą biblioteki narzędzi
 Name:		ding-libs
-Version:	0.3.0.1
+Version:	0.4.0
 # NOTE: do not decrease Release on Version change, unless ALL subpackage versions have been increased too
-Release:	2
+Release:	3
 License:	GPL v3+ (basicobjects), LGPL v3+ (collection, dhash, ini, path_utils, ref_array)
 Group:		Libraries
 Source0:	https://fedorahosted.org/releases/d/i/ding-libs/%{name}-%{version}.tar.gz
-# Source0-md5:	87d53a1f26e172a66f419915ccfa5661
+# Source0-md5:	8da087a535b66968797f337ce2c44a4e
 URL:		https://fedorahosted.org/sssd/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -349,7 +349,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n libbasicobjects
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libbasicobjects.so.0.0.0
+%attr(755,root,root) %{_libdir}/libbasicobjects.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libbasicobjects.so.0
 
 %files -n libbasicobjects-devel
@@ -365,7 +365,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -n libcollection
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libcollection.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libcollection.so.2
+%attr(755,root,root) %ghost %{_libdir}/libcollection.so.4
 
 %files -n libcollection-devel
 %defattr(644,root,root,755)
@@ -400,7 +400,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -n libini_config
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libini_config.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libini_config.so.3
+%attr(755,root,root) %ghost %{_libdir}/libini_config.so.5
 
 %files -n libini_config-devel
 %defattr(644,root,root,755)
