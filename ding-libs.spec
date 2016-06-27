@@ -2,22 +2,23 @@
 # Conditional build:
 %bcond_without	tests		# build without tests
 
+# see version.m4 or *.pc files
 %define		basicobjects_version	0.1.1
-%define		collection_version	0.6.2
+%define		collection_version	0.7.0
 %define		dhash_version		0.4.3
-%define		ini_config_version	1.1.0
+%define		ini_config_version	1.3.0
 %define		path_utils_version	0.2.1
-%define		ref_array_version	0.1.4
+%define		ref_array_version	0.1.5
 Summary:	"Ding is not GLib" assorted utility libraries
 Summary(pl.UTF-8):	"Ding is not GLib" - niepowiązane ze sobą biblioteki narzędzi
 Name:		ding-libs
-Version:	0.4.0
+Version:	0.6.0
 # NOTE: do not decrease Release on Version change, unless ALL subpackage versions have been increased too
-Release:	3
+Release:	4
 License:	GPL v3+ (basicobjects), LGPL v3+ (collection, dhash, ini, path_utils, ref_array)
 Group:		Libraries
 Source0:	https://fedorahosted.org/releases/d/i/ding-libs/%{name}-%{version}.tar.gz
-# Source0-md5:	8da087a535b66968797f337ce2c44a4e
+# Source0-md5:	0dd0a95f2f8d65b84d3cb9568494109a
 URL:		https://fedorahosted.org/sssd/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -408,6 +409,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libini_config.so
 %{_includedir}/ini_comment.h
 %{_includedir}/ini_config.h
+%{_includedir}/ini_configmod.h
 %{_includedir}/ini_configobj.h
 %{_includedir}/ini_valueobj.h
 %{_pkgconfigdir}/ini_config.pc
