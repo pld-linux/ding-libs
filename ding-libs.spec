@@ -14,7 +14,7 @@ Summary(pl.UTF-8):	"Ding is not GLib" - niepowiązane ze sobą biblioteki narzę
 Name:		ding-libs
 Version:	0.6.0
 # NOTE: do not decrease Release on Version change, unless ALL subpackage versions have been increased too
-Release:	4
+Release:	5
 License:	GPL v3+ (basicobjects), LGPL v3+ (collection, dhash, ini, path_utils, ref_array)
 Group:		Libraries
 Source0:	https://fedorahosted.org/releases/d/i/ding-libs/%{name}-%{version}.tar.gz
