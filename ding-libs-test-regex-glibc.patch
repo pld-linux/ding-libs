@@ -1,0 +1,40 @@
+--- ding-libs-0.6.1/ini/ini_validators_ut_check.c.orig	2026-05-21 00:00:00.000000000 +0200
++++ ding-libs-0.6.1/ini/ini_validators_ut_check.c	2026-05-21 00:00:00.000000000 +0200
+@@ -603,10 +603,15 @@
+     ini_errobj_next(errobj);
+
+     errmsg = ini_errobj_get_msg(errobj);
+-    ret = strcmp(errmsg,
+-                 "[rule/options_for_foo]: Cannot compile regular expression "
+-                 "from option 'section_re'. "
+-                 "Error: 'Unmatched [ or [^'");
++    /* glibc's regerror() wording for an unmatched '[' has changed over
++     * time (e.g. "Unmatched [ or [^" vs. "Unmatched [, [^, [:, [., or
++     * [="), so match only the stable prefix up to the embedded error. */
++    {
++        static const char prefix[] =
++            "[rule/options_for_foo]: Cannot compile regular expression "
++            "from option 'section_re'. Error: '";
++        ret = strncmp(errmsg, prefix, sizeof(prefix) - 1);
++    }
+     fail_unless(ret == 0, "Got msg: [%s]", errmsg);
+     ini_errobj_next(errobj);
+
+@@ -1025,9 +1030,14 @@
+     ini_errobj_next(errobj);
+
+     errmsg = ini_errobj_get_msg(errobj);
+-    ret = strcmp(errmsg,
+-                 "[rule/section_list]: Validator failed to use regex "
+-                 "[^foo\\(*$]:[Unmatched ( or \\(]");
++    /* Only the stable prefix is checked; the bracketed regerror text
++     * after "[^foo\\(*$]:" varies between glibc versions. */
++    {
++        static const char prefix[] =
++            "[rule/section_list]: Validator failed to use regex "
++            "[^foo\\(*$]:[";
++        ret = strncmp(errmsg, prefix, sizeof(prefix) - 1);
++    }
+     fail_unless(ret == 0, "Got msg: [%s]", errmsg);
+     ini_errobj_next(errobj);
+
